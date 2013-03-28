@@ -1,0 +1,14 @@
+.row
+  .twelve.columns
+    %h4
+      = link_to "Click here to start your dance party!", @playlist.url
+
+.row
+  .twelve.columns
+    Or check out the individual videos:
+    %ol
+    - @playlist.playlist_items.each do |playlist_item|
+      %li
+        = link_to playlist_item.search, "http://www.youtube.com/watch?v=" + playlist_item.video_id.split(":").last
+
+

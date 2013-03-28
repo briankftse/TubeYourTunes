@@ -1,0 +1,13 @@
+.row
+  .eight.columns
+    %h2 Convert your iTunes playlist to a Youtube music video playlist
+  .four.columns
+    = form_for @playlist, :html => {:multipart => true} do |f|
+      %h4.subheader
+        Upload your
+        %span.has-tip.tip-bottom{ :title => "In iTunes goto: File -> Library -> Export Playlist" } playlist
+        (.txt or .xml):
+      %p
+        = f.file_field :attachment
+
+      %p= f.submit "Let's Dance!", :class => "button"
